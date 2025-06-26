@@ -29,84 +29,91 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Custom Styles & Configuration -->
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #FFFFFF;
-            color: #1A1A1A;
-        }
-        .font-poppins {
-            font-family: 'Poppins', sans-serif;
-        }
-        .accent-gold {
-            color: #AA9868; /* Muted Gold */
-        }
-        .bg-accent-gold {
-            background-color: #AA9868;
-        }
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #FFFFFF;
+        color: #1A1A1A;
+    }
+    .font-poppins {
+        font-family: 'Poppins', sans-serif;
+    }
+    .accent-gold {
+        color: #AA9868; /* Muted Gold */
+    }
+    .bg-accent-gold {
+        background-color: #AA9868;
+    }
+    .hero-bg {
+        background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2874&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+    .hero-text {
+         text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+    .nav-scrolled {
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid #F0F0F0;
+    }
+    .nav-scrolled #nav-logo, .nav-scrolled #nav-links a {
+        color: #1A1A1A;
+    }
+    .nav-scrolled #mobile-menu-button {
+        color: #1A1A1A;
+    }
+    .nav-scrolled #nav-links a:hover {
+        color: #AA9868;
+    }
+    .sold-card {
+        background-color: #F9F9F9;
+        border: 1px solid #F0F0F0;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 8px;
+    }
+    .sold-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    }
+    /* Testimonial Marquee */
+    .marquee-container {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        -webkit-mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+        mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+    }
+    .marquee {
+        display: flex;
+        width: max-content;
+        animation: marquee 80s linear infinite; /* Slower animation */
+    }
+    .marquee:hover {
+        animation-play-state: paused;
+    }
+    .marquee-card {
+        flex-shrink: 0;
+        width: 400px;
+        background-color: #FFFFFF;
+        border: 1px solid #F0F0F0;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    @keyframes marquee {
+        0% { transform: translateX(0%); }
+        100% { transform: translateX(-50%); }
+    }
+
+    /* Fix for hero image on mobile */
+    @media (max-width: 768px) {
         .hero-bg {
-            background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2874&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background-attachment: scroll;
         }
-        .hero-text {
-             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        }
-        .nav-scrolled {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid #F0F0F0;
-        }
-        .nav-scrolled #nav-logo, .nav-scrolled #nav-links a {
-            color: #1A1A1A;
-        }
-        .nav-scrolled #mobile-menu-button {
-            color: #1A1A1A;
-        }
-        .nav-scrolled #nav-links a:hover {
-            color: #AA9868;
-        }
-        .sold-card {
-            background-color: #F9F9F9;
-            border: 1px solid #F0F0F0;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-radius: 8px;
-        }
-        .sold-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-        }
-        /* Testimonial Marquee */
-        .marquee-container {
-            overflow: hidden;
-            position: relative;
-            width: 100%;
-            -webkit-mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
-            mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
-        }
-        .marquee {
-            display: flex;
-            width: max-content;
-            animation: marquee 80s linear infinite; /* Slower animation */
-        }
-        .marquee:hover {
-            animation-play-state: paused;
-        }
-        .marquee-card {
-            flex-shrink: 0;
-            width: 400px;
-            background-color: #FFFFFF;
-            border: 1px solid #F0F0F0;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        @keyframes marquee {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); }
-        }
-    </style>
+    }
+</style>
 </head>
 <body class="text-gray-800">
 
